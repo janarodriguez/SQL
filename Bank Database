@@ -25,17 +25,17 @@ VALUES
     (15, 'Auto Loan', 'Loan', 4.25, 0.00, 20000.00);
 
 
-
+#Use a Select statement to order the items by price.  
 SELECT product_name
 FROM bank_products;
 
-
+#Show the product names that have a Checking OR Savings product type. 
 SELECT product_name
 FROM bank_products
 WHERE product_type="Checking"
 OR product_type="Savings";
 
-
+#Use AND statement to show the product names that have "Savings" product type AND have an interest_rate of at least 0.75, AND have no monthly fees.
 SELECT product_name, interest_rate
 FROM bank_products
 WHERE product_type="Savings"
