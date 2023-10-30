@@ -1,3 +1,4 @@
+#This project utilizes the following Salary data 
 CREATE TABLE employees (
     employee_id INTEGER PRIMARY KEY,
     department TEXT,
