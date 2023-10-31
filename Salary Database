@@ -1,4 +1,5 @@
 #This project utilizes the following Salary data 
+
 CREATE TABLE employees (
     employee_id INTEGER PRIMARY KEY,
     department TEXT,
@@ -23,6 +24,7 @@ VALUES
     (13, 'Engineering', 85000.00, 8),
     (14, 'Engineering', 92000.00, 10);
 
+#Analysis
 
 #Calculate how much is spent per year on the salaries for each department where the total spent on the salaries is at least $300,000.
 
