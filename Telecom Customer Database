@@ -1,4 +1,6 @@
 #This project uses the following Telecom Customer data 
+
+
 CREATE TABLE products (
     product_id INTEGER PRIMARY KEY,
     product_name TEXT,
@@ -31,6 +33,8 @@ VALUES
     ('345678901234', 3, 79.99, 'alice.davis@example.com'),
     ('456789012345', 4, 79.99, 'bob.johnson@example.com'),
     ('567890123456', 1, 49.99, 'susan.wilson@example.com');
+
+#Analysis
 
 #Use a SELECT statement to order all the product names of all the Internet product types. 
 SELECT product_name
