@@ -26,6 +26,7 @@ VALUES
     (14, 'Rewards Credit Card', 'Credit Card', 21.99, 0.00, 0.00),
     (15, 'Auto Loan', 'Loan', 4.25, 0.00, 20000.00);
 
+#Analysis
 
 #Use a Select statement to order the items by price.  
 SELECT product_name
