@@ -1,0 +1,59 @@
+#This analysis uses the following Famous People dataset:
+
+CREATE TABLE FamousPeople (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    occupation TEXT,
+    birth_date DATE,
+    nationality TEXT
+);
+
+INSERT INTO FamousPeople (name, occupation, birth_date, nationality)
+VALUES 
+    ('Emma Watson', 'Movie Star', '1990-04-15', 'British'),
+    ('Taylor Swift', 'Singer', '1989-12-13', 'American'),
+    ('J.K. Rowling', 'Author', '1965-07-31', 'British'),
+    ('Leonardo DiCaprio', 'Movie Star', '1974-11-11', 'American'),
+    ('Adele', 'Singer', '1988-05-05', 'British'),
+    ('Stephen King', 'Author', '1947-09-21', 'American'),
+    ('Angelina Jolie', 'Movie Star', '1975-06-04', 'American'),
+    ('Beyoncé', 'Singer', '1981-09-04', 'American'),
+    ('George R.R. Martin', 'Author', '1948-09-20', 'American'),
+    ('Tom Hanks', 'Movie Star', '1956-07-09', 'American');
+
+CREATE TABLE Movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    release_year INTEGER,
+    star_id INTEGER,
+    FOREIGN KEY (star_id) REFERENCES FamousPeople(id)
+);
+
+
+INSERT INTO Movies (title, release_year, star_id)
+VALUES 
+    ('Harry Potter and the Sorcerer''s Stone', 2001, 1),
+    ('Inception', 2010, 4),
+    ('Beauty and the Beast', 2017, 7),
+    ('The Matrix', 1999, 10),
+    ('Titanic', 1997, 4),
+    ('The Da Vinci Code', 2006, 3),
+    ('The Dark Knight', 2008, 1),
+    ('The Shining', 1980, 6),
+    ('Maleficent', 2014, 7),
+    ('Forrest Gump', 1994, 10);
+
+# Analysis 
+
+#Retrieve the names of the movie stars along with the titles of the movies they starred in.
+SELECT FamousPeople.name, Movies.title
+From FamousPeople
+Inner Join Movies ON FamousPeople.id = Movies.star_id;
+
+#Retrieve details about movies released in 2001 along with the names of the movie stars who acted in those movies.
+SELECT Movies.title AS Movie_Title, Movies.release_year, FamousPeople.name AS Actor_Name
+FROM Movies
+INNER JOIN FamousPeople ON Movies.star_id = FamousPeople.id
+WHERE Movies.release_year = 2001;
+
+       
